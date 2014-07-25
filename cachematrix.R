@@ -1,7 +1,8 @@
 ## This class can be used, to compute the inverse of a matrix and store it as cached data for further use.
 
 ## makeCachematrix: Creates a matrix object with a cacheable inverse.
-
+## Input  - x: square invertible matrix
+## Return - matrix-like Object, with cacheable inverse (see caheSolve)
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
   set <- function(y) {
@@ -19,7 +20,8 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## cacheSolve: Computes the inverse of the matrix or returns the cached value, if already computed.
-
+## Input  - x: CacheMatrix to inverse
+## Return - inverse matrix
 cacheSolve <- function(x, ...) {
   m <- x$getinv()
   if(!is.null(m)) {
